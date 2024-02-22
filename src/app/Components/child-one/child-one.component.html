@@ -1,0 +1,26 @@
+<div class="container row mx-auto my-5 gap-4">
+  <div class="card col-5 p-4">
+    <h2>Parent Component</h2>
+    <!-- sending data from parent to child-->
+    <label for="parentInput">Send parent data:</label>
+    <input type="text" name="parentInput" #data (input)="(0)" />
+    <!-- receiving data from child to parent-->
+
+    <p class="my-3">Data received from child: {{ childData }}</p>
+
+    <hr />
+    <label for="num1">Number 1:</label>
+    <input type="number" name="num1" #num1 (input)="(0)" />
+    <label for="num2">Number 2:</label>
+    <input type="number" name="num2" #num2 (input)="(0)" />
+  </div>
+
+  <div class="col-5">
+    <app-child-two
+      [parentData]="data.value"
+      (childEvent)="getData($event)"
+      [num1]="num1.value"
+      [num2]="num2.value"
+    ></app-child-two>
+  </div>
+</div>

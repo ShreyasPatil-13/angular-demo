@@ -1,0 +1,68 @@
+<div class="container row my-5 mx-auto">
+  <div class="col-5 mx-auto p-3 rounded-3">
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleInputName" [(ngModel)]="student.name" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputRollNumber" class="form-label">Roll Number</label>
+      <input type="number" class="form-control" id="exampleInputRollNumber" [(ngModel)]="student.rollNumber" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPercentage" class="form-label">Percentage</label>
+      <input type="text" class="form-control" id="exampleInputPercentage" [(ngModel)]="student.percentage" />
+    </div>
+    <button type="button" class="btn btn-primary mx-auto w-100">Submit</button>
+  </div>
+
+  <div class="col-5 mx-auto p-3 rounded-3">
+    <div class="mb-3">
+      <label class="form-label text-muted">Name</label>
+      <h4 class="border-bottom text-primary-emphasis">{{ student.name }}</h4>
+    </div>
+    <div class="mb-3">
+      <label class="form-label text-muted">Roll Number</label>
+      <h4 class="border-bottom text-primary-emphasis">
+        {{ student.rollNumber }}
+      </h4>
+    </div>
+    <div class="mb-3">
+      <label class="form-label text-muted">Percentage</label>
+      <h4 class="border-bottom text-primary-emphasis">
+        {{ student.percentage }}
+      </h4>
+    </div>
+    <div class="mb-3">
+      <label class="form-label
+       text-muted">Class</label>
+      <h4 class="border-bottom text-primary-emphasis">
+        @switch (true) {
+        @case (student.percentage > 90){<span>A+</span>}
+        @case (student.percentage > 75){<span>A</span>}
+        @case (student.percentage > 60){<span>B</span>}
+        @case (student.percentage > 40){<span>C</span>}
+        @case (student.percentage < 40){<span>F</span>}
+          }
+      </h4>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4 my-3 w-75 mx-auto">
+
+  <table border="2" class="table  table-striped text-center">
+    <thead>
+      <th>Subjects</th>
+      <th>Marks</th>
+    </thead>
+    <tbody>
+      @for (course of courses; track $index) {
+      <tr>
+        <td>{{course.name}}</td>
+        <td>{{course.marks}}</td>
+      </tr>
+
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,21 @@
+<div class="card p-4">
+  <h2>Child Component</h2>
+  <!-- sending data from child to parent -->
+  <label for="parentInput">Send child data:</label>
+  <input type="text" #data (input)="sendData(data.value)" />
+  <!-- receiving data from parent to child-->
+  <p class="my-3">Data received from parent: {{ parentData }}</p>
+
+  <hr />
+  <button (click)="add()">Addition</button>
+  <h5>Addition:{{ result }}</h5>
+
+  <!-- Switch case -->
+  @switch (change) { @case (1) {
+  <div>Hello</div>
+  } @case (2) {
+  <div>good</div>
+  } @case (3) {
+  <div>morning</div>
+  } }
+</div>

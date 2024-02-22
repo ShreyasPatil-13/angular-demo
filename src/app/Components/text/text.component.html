@@ -1,0 +1,40 @@
+<div class="container col-md-10 px-5 mt-4 rounded-3 shadow-sm">
+  <div class="row d-flex align-items-center mb-3">
+    <div class="col-2 w-auto">
+      <img [src]="imageUrl" alt="logo" height="50" />
+    </div>
+    <h1 class="col-10 display-5">
+      {{ welcome }}
+    </h1>
+  </div>
+
+  <div class="row p-4">
+    <textarea
+      class="form-control"
+      id="text"
+      rows="10"
+      placeholder="Enter text here...."
+      (input)="count()"
+      [(ngModel)]="textInput"
+    ></textarea>
+  </div>
+
+  <div class="row my-3 px-2">
+    <div class="col gap-2">
+      <button class="btn me-3 btn-primary w-auto" (click)="upperCase()">
+        Upper Case
+      </button>
+      <button class="btn btn-outline-primary w-auto" (click)="lowerCase()">
+        Lower Case
+      </button>
+    </div>
+    <div class="col-3 gap-2 d-flex justify-content-between">
+      <span id="letters" class="w-auto text-primary-emphasis lead"
+        >Letters: {{ letters }}</span
+      >
+      <span id="words" class="w-auto text-primary-emphasis lead"
+        >Words: {{ words }}</span
+      >
+    </div>
+  </div>
+</div>

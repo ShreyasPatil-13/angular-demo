@@ -1,0 +1,6 @@
+.col-5 {
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
